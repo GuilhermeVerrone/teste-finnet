@@ -1,0 +1,32 @@
+# Dependências do Composer
+/vendor/
+
+# Arquivos de ambiente e configuração local
+.env
+.env.local
+.env.*
+
+# Pastas de banco de dados e migrations locais
+/database/*.sql
+/database/dump.sql
+/database/*.bak
+
+# Diretórios de IDEs
+.idea/
+.vscode/
+
+# Logs e arquivos temporários
+*.log
+*.cache
+*.tmp
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# PHPUnit outputs
+/phpunit.xml.bak
+/tests/output/
+
+# Docker (se tiver volume local mapeado)
+docker-compose.override.yml
