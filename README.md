@@ -57,10 +57,10 @@ composer install
 Importe a estrutura do banco diretamente no container MySQL:
 
 ```bash
-docker exec -i bankmanager-db mysql -u root -proot bankmanager < database/migration.sql
+docker exec -i bankmanager_db mysql -u root -proot bankmanager < database/migration.sql
 ```
 
-- `bankmanager-db`: nome do container do MySQL
+- `bankmanager_db`: nome do container do MySQL
 - `root`: usuário padrão
 - `root`: senha padrão (sem espaço entre `-p` e a senha)
 
