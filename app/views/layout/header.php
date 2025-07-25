@@ -8,4 +8,13 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
+  
+<style>
+  body {
+    background: #e3e3e3;
+    background: linear-gradient(90deg,rgba(227, 227, 227, 1) 0%, rgba(219, 219, 219, 1) 35%, rgba(255, 255, 255, 1) 100%);
+    max-height: 100vh;
+  }
+</style>
+
   <div class="container mt-4">

@@ -76,3 +76,5 @@ elseif ($uri === '/matriculas/store' && $method === 'POST') $matricula->store();
 elseif (preg_match('#^/matriculas/delete/(\d+)$#', $uri, $m)) $matricula->delete($m[1]);
 
 else echo "404 - Página não encontrada";
+
+?>]
