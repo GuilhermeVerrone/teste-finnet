@@ -17,17 +17,23 @@ class AuthController
     }
 
     public function login()
-{
-    $email = $_POST['email'] ?? '';
-    $senha = $_POST['senha'] ?? '';
+    {
+        $email = $_POST['email'] ?? '';
+        $senha = $_POST['senha'] ?? '';
 
-    $stmt = $this->model->getByEmail($email);
+        $stmt = $this->model->getByEmail($email);
 
-    if ($stmt && password_verify($senha, $stmt['senha_hash'])) {
-        $_SESSION['admin'] = $stmt['email'];
-        header('Location: /');
-    } else {
-        echo "❌ Credenciais inválidas!";
+        if ($stmt && password_verify($senha, $stmt['senha_hash'])) {
+            $_SESSION['admin'] = $stmt['email'];
+            header('Location: /');
+        } else {
+            echo "❌ Credenciais inválidas!";
+        }
     }
-}
+    public function logout()
+    {
+        session_destroy(); // Encerra a sessão atual
+        header('Location: /login'); // Redireciona para a página de login
+        exit;
+    }
 }

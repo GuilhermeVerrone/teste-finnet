@@ -1,7 +1,8 @@
 <?php
 
+require_once __DIR__ . '/../../vendor/autoload.php';
 use PHPUnit\Framework\TestCase;
-use App\Models\Matricula;
+require_once __DIR__ . '/../../app/models/Matricula.php';
 
 class MatriculaTest extends TestCase
 {

@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Models;
-
 class Matricula
 {
     private $db;

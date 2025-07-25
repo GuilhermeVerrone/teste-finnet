@@ -32,18 +32,20 @@ if ($uri === '/login' && $method === 'GET') {
     return;
 }
 
-// 🔐 Áreas protegidas
+
 requireLogin();
 
-// ✅ Só renderize o menu DEPOIS de possíveis redirecionamentos
 if (!preg_match('#/store|/update|/delete#', $uri)) {
-    echo '<nav>
-        <a href="/areas">Áreas</a> |
-        <a href="/cursos">Cursos</a> |
-        <a href="/alunos">Alunos</a> |
-        <a href="/matriculas">Matrículas</a> |
-        <a href="/logout">Sair</a>
-    </nav><hr>';
+    echo '
+    <nav class="mt-3 mb-4 text-center">
+        <div class="d-inline-block">
+            <a href="/areas" class="btn btn-outline-primary btn-sm me-2">Áreas</a>
+            <a href="/cursos" class="btn btn-outline-primary btn-sm me-2">Cursos</a>
+            <a href="/alunos" class="btn btn-outline-primary btn-sm me-2">Alunos</a>
+            <a href="/matriculas" class="btn btn-outline-primary btn-sm me-2">Matrículas</a>
+            <a href="/logout" class="btn btn-outline-danger btn-sm">Sair</a>
+        </div>
+    </nav>';
 }
 
 // 🔄 Roteamento
