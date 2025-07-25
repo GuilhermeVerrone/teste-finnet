@@ -38,12 +38,6 @@ Suba os containers (PHP, Apache, MySQL):
 docker-compose up -d
 ```
 
-Acesse o container da aplicação:
-
-```bash
-docker exec -it bankmanager_app bash
-```
-
 Instale as dependências do Composer:
 
 ```bash
@@ -84,7 +78,7 @@ Login padrão:
 ## 🧪 Rodar os Testes (PHPUnit)
 
 ```bash
-docker exec -it bankmanager-app vendor/bin/phpunit
+docker exec -it bankmanager_app vendor/bin/phpunit
 ```
 
 ---
