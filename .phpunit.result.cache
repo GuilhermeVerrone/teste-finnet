@@ -1,0 +1,1 @@
+{"version":1,"defects":{"AlunoTest::testModelReturnsExpectedFields":8,"AreaCursoTest::testModelCanBeInstantiated":8,"MatriculaTest::testModelImplementsCreateMethod":8},"times":{"AlunoTest::testModelReturnsExpectedFields":0.011,"AreaCursoTest::testModelCanBeInstantiated":0.001,"MatriculaTest::testModelImplementsCreateMethod":0}}
