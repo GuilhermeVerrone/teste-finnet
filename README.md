@@ -74,7 +74,7 @@ Para isso, siga os passos abaixo:
 2. O usuário será criado com os seguintes dados:
 
    - **Email:** `admin@admin.com`
-   - **Senha:** `admin`
+   - **Senha:** `123456`
 
 3. Após a confirmação, acesse o sistema via [http://localhost:8000/login](http://localhost:8000/login) e utilize as credenciais acima.
 
