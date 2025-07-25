@@ -60,6 +60,24 @@ Get-Content migrations/migration.sql | docker exec -i bankmanager_db mysql -u ro
 
 ---
 
+## 👤 Criar Usuário Administrador
+
+Antes de acessar o sistema, é necessário criar um usuário administrador.  
+Para isso, siga os passos abaixo:
+
+1. Acesse o navegador e vá até:
+
+   ```
+   http://localhost:8000/criar_admin.php
+   ```
+
+2. O usuário será criado com os seguintes dados:
+
+   - **Email:** `admin@admin.com`
+   - **Senha:** `admin`
+
+3. Após a confirmação, acesse o sistema via [http://localhost:8000/login](http://localhost:8000/login) e utilize as credenciais acima.
+
 ## 👤 Acesso ao Sistema
 
 Acesse no navegador:
@@ -67,11 +85,6 @@ Acesse no navegador:
 ```
 http://localhost:8000
 ```
-
-Login padrão:
-
-- **Email**: `admin@admin.com`
-- **Senha**: `123456`
 
 ---
 
