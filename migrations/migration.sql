@@ -42,7 +42,3 @@ CREATE TABLE matriculas (
     FOREIGN KEY (aluno_id) REFERENCES alunos(id) ON DELETE CASCADE,
     FOREIGN KEY (curso_id) REFERENCES cursos(id) ON DELETE CASCADE
 );
-
--- Admin padrão (opcional)
-INSERT INTO admins (email, senha_hash)
-VALUES ('admin@admin.com', '$2y$10$4JZuYIuBvD2LOdK3ABsWdePZtNWiOHOjHJruUgOayG/vJMTu7LLvC');
