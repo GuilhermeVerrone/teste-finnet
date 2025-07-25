@@ -1,131 +1,127 @@
-# 🏦 Bankmanager – Teste Técnico PHP
+# BankManager - Sistema Acadêmico em PHP (MVC + Docker)
 
-Sistema de gerenciamento acadêmico desenvolvido em **PHP puro** com padrão **MVC**, autenticação de administrador, e gerenciamento de:
-
-- Áreas de curso
-- Cursos
-- Alunos
-- Matrículas
-
-Inclui **login seguro**, testes com PHPUnit, estrutura via **Composer**, rodando localmente ou via **Docker**.
+Sistema para gerenciamento de alunos, cursos, áreas e matrículas com autenticação e interface amigável.
 
 ---
 
-## 🚀 Instalação Rápida
+## 🚀 Tecnologias Utilizadas
 
-### ✅ 1. Clone o repositório
+- PHP 8
+- MySQL 8
+- Docker + Docker Compose
+- Composer
+- Bootstrap 5
+- jQuery
+- PHPUnit
+
+---
+
+## 📦 Requisitos
+
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+
+---
+
+## ⚙️ Instalação com Docker
+
+Clone o repositório:
 
 ```bash
 git clone https://github.com/GuilhermeVerrone/teste-finnet.git
 cd teste-finnet
 ```
 
-### ✅ 2. Instale as dependências
-
-```bash
-composer install
-```
-
-> Requer PHP 8.1+ e Composer instalado.
-
-### ✅ 3. Configure o banco de dados
-
-Crie um banco MySQL chamado `bankmanager` e execute o script:
-
-```bash
-mysql -u root -p bankmanager < database/migration.sql
-```
-
-Um admin padrão será criado:
-
-- **Email:** `admin@admin.com`
-- **Senha:** `123456`
-
-### ✅ 4. Inicie o servidor embutido do PHP
-
-```bash
-php -S localhost:8000 -t public
-```
-
-Acesse em: [http://localhost:8000/login](http://localhost:8000/login)
-
----
-
-## 🐳 Executando com Docker (opcional)
-
-> Certifique-se de ter Docker + Docker Compose instalados.
+Suba os containers (PHP, Apache, MySQL):
 
 ```bash
 docker-compose up -d
 ```
 
-Acesse em: [http://localhost:8000](http://localhost:8000)
-
----
-
-## 🧪 Testes
-
-Rode os testes unitários com:
+Acesse o container da aplicação:
 
 ```bash
-vendor/bin/phpunit
+docker exec -it bankmanager-app bash
 ```
 
-Cobertura:
+Instale as dependências do Composer:
 
-- ÁreaCurso Model
-- Aluno Model
-- Matricula Model
-
----
-
-## 📁 Estrutura de Diretórios
-
-```
-app/
-├── controllers/
-├── models/
-├── views/
-config/
-database/
-public/         ← index.php (roteador)
-tests/
+```bash
+composer install
 ```
 
 ---
 
-## 🔐 Rotas Protegidas
+## 🗄️ Executar Migrations (via Docker)
 
-| Método | Rota          | Ação                          |
-| ------ | ------------- | ----------------------------- |
-| GET    | /login        | Exibe tela de login           |
-| POST   | /login        | Realiza login                 |
-| GET    | /logout       | Logout                        |
-| GET    | /areas        | Listar áreas de curso         |
-| GET    | /areas/create | Formulário de nova área       |
-| POST   | /areas/store  | Salvar nova área              |
-| ...    | ...           | (idem para cursos, alunos...) |
+Importe a estrutura do banco diretamente no container MySQL:
 
----
+```bash
+docker exec -i bankmanager-db mysql -u root -proot bankmanager < database/migration.sql
+```
 
-## 🛠️ Tecnologias Usadas
-
-- PHP 8.1+
-- Composer (autoload + testes)
-- PHPUnit (testes unitários)
-- MySQL (migrations incluídas)
-- Docker (opcional)
-- Bootstrap 5 (UX)
-- jQuery (interações básicas)
+- `bankmanager-db`: nome do container do MySQL
+- `root`: usuário padrão
+- `root`: senha padrão (sem espaço entre `-p` e a senha)
 
 ---
 
-## 👨‍💻 Autor
+## 👤 Acesso ao Sistema
 
-[Guilherme Verrone](mailto:guilherme.verrone@outlook.com)
+Acesse no navegador:
+
+```
+http://localhost:8000
+```
+
+Login padrão:
+
+- **Email**: `admin@admin.com`
+- **Senha**: `123456`
 
 ---
 
-## 📝 Licença
+## 🧪 Rodar os Testes (PHPUnit)
 
-MIT
+```bash
+docker exec -it bankmanager-app vendor/bin/phpunit
+```
+
+---
+
+## 🛣️ Rotas principais
+
+| Funcionalidade | Rota          |
+| -------------- | ------------- |
+| Login          | `/login`      |
+| Logout         | `/logout`     |
+| Áreas          | `/areas`      |
+| Cursos         | `/cursos`     |
+| Alunos         | `/alunos`     |
+| Matrículas     | `/matriculas` |
+
+---
+
+## 📁 Estrutura de Pastas
+
+```
+├── app/
+│   ├── controllers/
+│   ├── models/
+│   └── views/
+├── config/
+├── database/
+│   └── migration.sql
+├── public/
+│   └── index.php
+├── tests/
+├── docker-compose.yml
+├── Dockerfile
+└── README.md
+```
+
+---
+
+## 📄 Licença
+
+MIT © 2025 - Guilherme Verrone
