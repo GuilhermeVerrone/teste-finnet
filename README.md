@@ -41,7 +41,7 @@ docker-compose up -d
 Acesse o container da aplicação:
 
 ```bash
-docker exec -it bankmanager-app bash
+docker exec -it bankmanager_app bash
 ```
 
 Instale as dependências do Composer:
